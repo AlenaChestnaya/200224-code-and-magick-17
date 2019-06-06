@@ -24,7 +24,7 @@ window.renderStatistics = function(ctx, names, times) {
   ctx.fillText('Список результатов:', 130, 50);
 
 
-  ctx.fillStyle = 'blue';
+/*  ctx.fillStyle = 'blue';
   ctx.fillRect(calculateStartX(0), 80, widthOfColumn, 150);
 
   ctx.fillStyle = 'pink';
@@ -35,5 +35,21 @@ window.renderStatistics = function(ctx, names, times) {
 
   ctx.fillStyle = 'yellow';
   ctx.fillRect(calculateStartX(3), 80, widthOfColumn, 150);
+*/
+
+  for (var i = 0; i < names.length; i++) {
+    var time = times[i];
+    var name = names[i];
+
+    ctx.fillStyle = 'black';
+    ctx.font = '16px PT Mono';
+    ctx.textBaseline = 'hanging';
+    ctx.fillText(name, calculateStartX(i), 250);
+
+    console.log(time);
+
+    ctx.fillStyle = 'indianred';
+    ctx.fillRect(calculateStartX(i), 80, widthOfColumn, 150);
+  };
 
 };
