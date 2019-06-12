@@ -1,3 +1,5 @@
+'use strict';
+
 window.renderStatistics = function(ctx, names, times) {
   var startLeft = 130;
   var widthOfColumn = 40;
@@ -45,7 +47,7 @@ window.renderStatistics = function(ctx, names, times) {
     ctx.fillText(time, calculateStartX(i), calculateStartY(heightOfColumn) - 20);
 
     // задаем цвет колонкам
-    if (name == 'Вы') {
+    if (name === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
       var RandomSaturation = Math.round(Math.random() * 100);
